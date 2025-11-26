@@ -14,8 +14,12 @@ from typing import List
 
 
 def sum_array(nums: List[int]) -> int:
-    # TODO: implement this
-    raise NotImplementedError
+    array_sum = 0
+
+    for num in nums:
+        array_sum += num
+    
+    return array_sum
 
 
 def run_tests():
