@@ -9,10 +9,17 @@ from typing import List, Tuple
 
 
 def range_sums(nums: List[int], queries: List[Tuple[int, int]]) -> List[int]:
-    # TODO: implement this using an efficient approach
-    # Hint: Think about reusing work between queries instead of
-    # recomputing sums from scratch each time.
-    raise NotImplementedError
+    n = len(nums)
+    
+    p = [0] * (n + 1)
+    for i in range(1, n + 1):
+        p[i] = p[i - 1] + nums[i - 1]
+    
+    res = []
+    for (l, r) in queries:
+        res.append(p[r + 1] - p[l])
+    
+    return res
 
 
 def run_tests():
