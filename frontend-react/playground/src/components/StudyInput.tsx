@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 type StudyInputProps = {
     onAdd: (name: string) => void;
@@ -9,12 +9,14 @@ export function StudyInput({ onAdd }: StudyInputProps) {
 
     return (
         <div>
-            <input value={ text } onChange={(e) => setText(e.target.value)} />
+            <input value={text} onChange={(e) => setText(e.target.value)} placeholder="Study session name" />
             <button onClick={() => {
                 if (text.trim().length === 0) return;
                 onAdd(text);
                 setText("");
-            }}>Add</button>
+            }}>
+                Add
+            </button>
         </div>
     );
 }
